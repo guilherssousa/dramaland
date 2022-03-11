@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.main-news-overlay {
+  @apply h-full w-full bg-gradient-to-t from-black;
+}
