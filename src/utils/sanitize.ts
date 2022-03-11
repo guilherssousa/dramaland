@@ -8,9 +8,9 @@ export function sanitizePosts(posts: Article[]): Article[] {
 }
 
 export function sanitizePost(post: Article): Article | boolean {
-  const [metadata, markdown] = post.content.trim().split('-- START --')
-
   try {
+    const [metadata, markdown] = post.content.trim().split('-- START --')
+
     const parsedMetadata = JSON.parse(metadata)
 
     const url = post.url
@@ -19,6 +19,7 @@ export function sanitizePost(post: Article): Article | boolean {
 
     return { ...post, ...parsedMetadata, markdown, url }
   } catch (e) {
+    console.error(`Failed to trim: ${post.title}`)
     return false
   }
 }
