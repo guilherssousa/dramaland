@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3127",
     "build": "next build",
     "start": "next start"
   },
@@ -12,6 +12,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.2",
     "@types/axios": "^0.14.0",
     "@types/node": "17.0.4",
     "@types/react": "17.0.38",

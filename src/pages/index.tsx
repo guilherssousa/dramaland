@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
-import Drama from 'types/drama'
+import { Drama } from 'types'
 
 import api from 'services/api'
 
@@ -32,7 +32,7 @@ const Home: NextPage<HomeProps> = ({ topDramas }) => {
       <section className={'mx-auto my-4 max-w-screen-lg'}>
         {mainArticles.length == 3 && <MainNews articles={mainArticles} />}
         <div className={'flex'}>
-          <div className={'w-8/12 p-4'}>
+          <main className={'w-8/12 p-4'}>
             <div>
               {otherArticles.length ? (
                 otherArticles.map((article, index) => (
@@ -47,8 +47,8 @@ const Home: NextPage<HomeProps> = ({ topDramas }) => {
                 </div>
               )}
             </div>
-          </div>
-          <div className={'w-4/12 p-4'}>
+          </main>
+          <aside className={'w-4/12 p-4'}>
             <div className="border p-4">
               <span className={'font-bold uppercase text-blue-400'}>
                 Dramas populares
@@ -81,7 +81,7 @@ const Home: NextPage<HomeProps> = ({ topDramas }) => {
                 ))}
               </div>
             </div>
-          </div>
+          </aside>
         </div>
       </section>
     </>
