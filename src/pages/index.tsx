@@ -57,7 +57,7 @@ const Home: NextPage<HomeProps> = ({ topDramas }) => {
                 {topDramas.map((drama) => (
                   <div
                     key={`top-dramas-${drama.slug_query}`}
-                    className={'mt-3 flex'}
+                    className={'group mt-3 flex cursor-pointer'}
                   >
                     <div className={'w-20'}>
                       <img
@@ -66,7 +66,11 @@ const Home: NextPage<HomeProps> = ({ topDramas }) => {
                       ></img>
                     </div>
                     <div className={'ml-2 w-7/12'}>
-                      <span className={'block text-sm font-bold text-blue-900'}>
+                      <span
+                        className={
+                          'block text-sm font-bold text-blue-900 group-hover:text-blue-400'
+                        }
+                      >
                         {drama.data.title}
                       </span>
                       <span className={'text-sm'}>

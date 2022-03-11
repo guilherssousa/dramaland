@@ -7,7 +7,9 @@ interface ArticleCardProps {
 
 const ArticleCard: NextPage<ArticleCardProps> = ({ article }) => {
   return (
-    <article className={'mb-4 flex max-h-52 cursor-pointer border-b px-2 pb-4'}>
+    <article
+      className={'group mb-4 flex max-h-52 cursor-pointer border-b px-2 pb-4'}
+    >
       <div className="h-42 w-72 overflow-hidden rounded-md">
         <img
           src={article.cover}
