@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import { Article } from 'types'
 
 import Link from 'next/link'
+import moment from 'moment'
 
 interface ArticleCardProps {
   article: Article
@@ -42,7 +43,8 @@ const ArticleCard: NextPage<ArticleCardProps> = ({ article }) => {
             </div>
             <div className="mt-2">
               <span>
-                18 horas atrás &bull; Por {article.author.displayName}
+                {moment(article.published).fromNow()} &bull; Por{' '}
+                {article.author.displayName}
               </span>
             </div>
           </div>
