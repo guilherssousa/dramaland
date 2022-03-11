@@ -27,8 +27,6 @@ const Home: NextPage<HomeProps> = ({ topDramas, articles }) => {
     }
   }, [])
 
-  console.log(articles.slice(isDesktop))
-
   return (
     <>
       <Head>
