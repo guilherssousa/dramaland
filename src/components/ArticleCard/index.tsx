@@ -13,10 +13,10 @@ const ArticleCard: NextPage<ArticleCardProps> = ({ article }) => {
       <a>
         <article
           className={
-            'group mb-4 flex max-h-52 cursor-pointer border-b px-2 pb-4'
+            'group mb-4 flex cursor-pointer border-b px-2 pb-4 sm:max-h-52'
           }
         >
-          <div className="h-42 w-72 overflow-hidden rounded-md">
+          <div className="md:h-42 h-28 w-32 overflow-hidden rounded-md sm:block md:w-72">
             <img
               src={article.cover}
               className={
@@ -32,7 +32,7 @@ const ArticleCard: NextPage<ArticleCardProps> = ({ article }) => {
                 {article.labels?.[0].toUpperCase()}
               </span>
             </div>
-            <div className={'text-xl font-bold group-hover:text-blue-400'}>
+            <div className={'font-bold group-hover:text-blue-400 sm:text-xl'}>
               {article.title}
             </div>
             <div>

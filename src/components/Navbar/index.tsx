@@ -14,7 +14,7 @@ const Navbar: NextPage = () => {
             </Link>
             <div
               className={
-                'ml-6 flex items-center gap-x-4 font-bold uppercase text-white'
+                'ml-6 hidden items-center gap-x-4 font-bold uppercase text-white sm:flex'
               }
             >
               <Link href={'/noticias'} passHref>

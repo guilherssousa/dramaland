@@ -12,10 +12,10 @@ const MainNews: NextPage<MainNewsProps> = ({ articles }) => {
   return (
     <section
       className={
-        'mx-auto mt-8 grid h-96 max-w-screen-lg grid-cols-2 grid-rows-2 gap-2 px-4'
+        'mx-auto mt-8 hidden h-96 max-w-screen-lg grid-cols-2 grid-rows-2 gap-2 px-4 sm:grid'
       }
     >
-      {articles.map((article, index) => {
+      {articles.slice(0, 3).map((article, index) => {
         if (index == 0)
           return (
             <div className={'row-span-2'} key={`article-main-${index}`}>
