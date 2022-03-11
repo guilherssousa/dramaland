@@ -39,7 +39,7 @@ const Home: NextPage<HomeProps> = ({ topDramas, articles }) => {
         {articles.length >= 3 && <MainNews articles={articles} />}
         <Layout topDramas={topDramas}>
           <div>
-            {articles.slice(isDesktop).length >= 3 ? (
+            {articles.slice(isDesktop).length >= 3 - isDesktop ? (
               articles
                 .slice(isDesktop)
                 .map((article, index) => (
