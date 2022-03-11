@@ -11,6 +11,7 @@ export interface Drama {
 }
 
 export interface Article {
+  error?: boolean
   published: string
   updated: string
   title: string

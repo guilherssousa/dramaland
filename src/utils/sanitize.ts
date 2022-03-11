@@ -1,17 +1,24 @@
 import { Article } from 'types'
 
 export function sanitizePosts(posts: Article[]): Article[] {
-  return posts.map((post) => sanitizePost(post))
+  const final = posts.map((post) => sanitizePost(post))
+
+  // filter all elements equal to false
+  return final.flatMap((val) => (typeof val !== 'boolean' ? val : []))
 }
 
-export function sanitizePost(post: Article) {
+export function sanitizePost(post: Article): Article | boolean {
   const [metadata, markdown] = post.content.trim().split('-- START --')
 
-  const { cover } = JSON.parse(metadata)
+  try {
+    const { cover, author } = JSON.parse(metadata)
 
-  const url = post.url
-    .replace('http://dramaland-noticias.blogspot.com/', '')
-    .replace('.html', '')
+    const url = post.url
+      .replace('http://dramaland-noticias.blogspot.com/', '')
+      .replace('.html', '')
 
-  return { ...post, cover, markdown, url }
+    return { ...post, author, cover, markdown, url }
+  } catch (e) {
+    return false
+  }
 }
