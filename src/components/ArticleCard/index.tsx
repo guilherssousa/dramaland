@@ -9,7 +9,7 @@ interface ArticleCardProps {
 
 const ArticleCard: NextPage<ArticleCardProps> = ({ article }) => {
   return (
-    <Link href="/materia-legal" passHref>
+    <Link href={`/[...slug]?id=${article.url}`} as={article.url} passHref>
       <a>
         <article
           className={
@@ -29,14 +29,16 @@ const ArticleCard: NextPage<ArticleCardProps> = ({ article }) => {
               <span
                 className={'text-sm font-bold text-blue-400 transition-all'}
               >
-                {article.category.toUpperCase()}
+                {article.labels?.[0].toUpperCase()}
               </span>
             </div>
             <div className={'text-xl font-bold group-hover:text-blue-400'}>
               {article.title}
             </div>
             <div>
-              <p className="mt-2">{article.description}</p>
+              <p className="mt-2">
+                {article.markdown.split(' ').slice(0, 10).join(' ')}
+              </p>
             </div>
             <div className="mt-2">
               <span>18 horas atrás &bull; Por Guilherme Sousa</span>

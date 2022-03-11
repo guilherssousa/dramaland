@@ -1,4 +1,5 @@
 import '../styles/globals.css'
+import 'moment/locale/pt-br'
 import type { AppProps } from 'next/app'
 import App from 'next/app'
 

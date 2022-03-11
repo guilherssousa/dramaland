@@ -1,53 +1,54 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import ReactMarkdown from 'react-markdown'
+import moment from 'moment'
 
-import { Drama, Article } from 'types'
+import { Article, Drama } from 'types'
 
 import Navbar from 'components/Navbar'
-import ArticleCard from 'components/ArticleCard'
-import MainNews from 'components/MainNews'
-
 import blogger from 'services/blogger'
+import { sanitizePost } from 'utils/sanitize'
 
-import { sanitizePosts } from 'utils/sanitize'
-
-interface HomeProps {
+interface ArticleProps {
+  article: Article
   topDramas: Drama[]
-  articles: Article[]
 }
 
-const Home: NextPage<HomeProps> = ({ topDramas, articles }) => {
-  const [mainArticles, otherArticles] = [
-    [...articles].splice(0, 3),
-    [...articles].splice(4, articles.length - 1),
-  ]
-
+const Article: NextPage<ArticleProps> = ({ topDramas, article }) => {
   return (
     <>
       <Head>
-        <title>Home | Dramaland </title>
+        <title>{article.title} | Dramaland</title>
       </Head>
 
       <Navbar />
 
       <section className={'mx-auto my-4 max-w-screen-lg'}>
-        {mainArticles.length == 3 && <MainNews articles={mainArticles} />}
         <div className={'flex'}>
-          <main className={'w-8/12 p-4'}>
-            <div>
-              {otherArticles.length ? (
-                otherArticles.map((article, index) => (
-                  <ArticleCard
-                    key={`article-card-${index}`}
-                    article={article}
-                  />
-                ))
-              ) : (
-                <div className="mt-2 w-full text-center text-gray-700">
-                  <span>Não temos matérias para exibir :(</span>
+          <main className={'flex w-8/12 items-center justify-center p-4'}>
+            <article>
+              <div>
+                <img
+                  className="h-80 w-full rounded-xl object-cover"
+                  src={article.cover}
+                ></img>
+                <h2 className="mt-4 text-4xl font-bold text-gray-900">
+                  {article.title}
+                </h2>
+                <div className="mt-2 flex w-full items-center justify-between pr-2">
+                  <span className="font-bold">
+                    Por{' '}
+                    <span className="uppercase text-blue-400">
+                      {article.author.displayName}
+                    </span>
+                  </span>
+                  <span>Publicado {moment(article.published).fromNow()}</span>
                 </div>
-              )}
-            </div>
+              </div>
+              <div className={'prose mt-6 w-full max-w-full lg:prose-lg'}>
+                <ReactMarkdown>{article.markdown}</ReactMarkdown>
+              </div>
+            </article>
           </main>
           <aside className={'w-4/12 p-4'}>
             <div className="border p-4">
@@ -89,14 +90,22 @@ const Home: NextPage<HomeProps> = ({ topDramas, articles }) => {
   )
 }
 
-export const getServerSideProps = async () => {
-  const posts = await blogger.getPosts()
+interface GetServerSideProps {
+  query: {
+    slug: string[]
+  }
+}
+
+export async function getServerSideProps({ query }: GetServerSideProps) {
+  const slug = query.slug.join('/')
+
+  const article = await blogger.getByPath(`/${slug.concat('.html')}`)
 
   return {
     props: {
-      articles: sanitizePosts(posts.items),
+      article: sanitizePost(article),
     },
   }
 }
 
-export default Home
+export default Article

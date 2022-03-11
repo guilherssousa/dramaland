@@ -1,10 +1,3 @@
-export interface Article {
-  title: string
-  description: string
-  cover: string
-  category: string
-}
-
 export interface Drama {
   data: {
     title: string
@@ -15,4 +8,18 @@ export interface Drama {
     }
   }
   slug_query: string
+}
+
+export interface Article {
+  published: string
+  updated: string
+  title: string
+  content: string
+  author: {
+    displayName: string
+  }
+  labels: string[]
+  markdown: string
+  cover: string
+  url: string
 }

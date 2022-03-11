@@ -12,8 +12,9 @@ const MainNewsCard: NextPage<MainNewsCardProps> = ({ article, center }) => {
   const styles = center
     ? 'absolute bottom-0 h-full w-full cursor-pointer rounded-md bg-center bg-cover bg-blend-overlay transition-all group-hover:scale-105'
     : 'absolute bottom-0 h-full w-full cursor-pointer rounded-md bg-cover bg-blend-overlay transition-all group-hover:scale-105'
+
   return (
-    <Link href="/artigo-top" passHref>
+    <Link href={`/[...slug]?id=${article.url}`} as={article.url} passHref>
       <a>
         <div
           className={
@@ -25,7 +26,7 @@ const MainNewsCard: NextPage<MainNewsCardProps> = ({ article, center }) => {
               className={'relative z-10 flex h-full flex-col justify-end p-4'}
             >
               <span className="w-fit rounded-sm bg-blue-400 px-2 font-bold text-white">
-                {article.category.toUpperCase()}
+                {article.labels?.[0].toUpperCase()}
               </span>
               <h1 className={'text-2xl font-bold text-white'}>
                 {article.title}
