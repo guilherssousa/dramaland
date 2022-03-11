@@ -1,8 +1,11 @@
+
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://dramaland.vercel.com">
     <img src="https://raw.githubusercontent.com/guilherssousa/dramaland/main/.github/dramaland-blue.png" alt="Logo" width=400>
+    <br><br>
+    <img src="https://raw.githubusercontent.com/guilherssousa/dramaland/main/.github/screenshot.png" alt="Screenshot" width=600/>
   </a>
 </p>
 
@@ -34,7 +37,7 @@ Abaixo segue o que foi utilizado na criação do portal:
 - [Next.js](https://nextjs.org/) - O Next.js é um framework React que ajuda a ter uma experiência melhor com ferramentas de desenvolvimento;
 - [Tailwind CSS](https://tailwindcss.com/) - O Tailwind CSS é um framework CSS formado por classes utilitárias para agilizar o esenvolvimento;
 - [Markdown](https://pt.wikipedia.org/wiki/Markdown) - O Markdown é uma linguagem simples de marcação que converte seu texto em HTML válido;
-  - [React Markdown](https://github.com/remarkjs/react-markdown) - O React Markdown é uma biblioteca para renderização de Markdown em componentes React;
+	- [React Markdown](https://github.com/remarkjs/react-markdown) - O React Markdown é uma biblioteca para renderização de Markdown em componentes React;
 - [Axios](https://github.com/axios/axios) - O Axios é um cliente HTTP baseado em Promises para Browser e NodeJS;
 - [ESLint](https://eslint.org/) - O ESLint é uma ferramenta de lint plugável para JavaScript e JSX;
 - [Prettier](https://prettier.io/) - O Prettier atualiza seu código automaticamente seguindo os padrões que você quiser toda vez salva o arquivo;
