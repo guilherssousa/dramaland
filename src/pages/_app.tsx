@@ -2,6 +2,8 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import App from 'next/app'
 
+import api from 'services/api'
+
 import backupTopDramas from 'data/topDramas.json'
 
 function MyApp({ Component, pageProps }: AppProps) {
