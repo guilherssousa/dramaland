@@ -3,8 +3,6 @@ import Head from 'next/head'
 
 import { Drama } from 'types'
 
-import api from 'services/api'
-
 import Navbar from 'components/Navbar'
 
 interface ArticleProps {
@@ -42,7 +40,7 @@ const Article: NextPage<ArticleProps> = ({ topDramas }) => {
                   <span>Publicado a 6 horas</span>
                 </div>
               </div>
-              <div className={'prose mt-4 w-full max-w-full lg:prose-lg'}>
+              <div className={'prose mt-6 w-full max-w-full lg:prose-lg'}>
                 <p>
                   Quero falar sobre Our Belovod Summer. 😌😌 Logo quando comecei
                   o drama, eu amei, e pensei que era uma comédia romântica
@@ -143,34 +141,6 @@ const Article: NextPage<ArticleProps> = ({ topDramas }) => {
 interface ArticleServerSideProps {
   query: {
     slug: string
-  }
-}
-
-export async function getServerSideProps({ query }: ArticleServerSideProps) {
-  console.log(query)
-
-  // TODO: Get top dramas from API
-  const topDramasIds = [
-    '695149-twenty-five-twenty-one',
-    '693591-in-house-confrontation',
-    '687861-our-police-course',
-    '692969-office-romance-cruelty',
-    '692971-thirty-nine',
-  ]
-
-  async function fetchDramaInfo(id: string) {
-    const { data } = await api.get(`/id/${id}`)
-    return data
-  }
-
-  const topDramas = await Promise.all(
-    topDramasIds.map((dramaId) => fetchDramaInfo(dramaId))
-  )
-
-  return {
-    props: {
-      topDramas: topDramas,
-    },
   }
 }
 
