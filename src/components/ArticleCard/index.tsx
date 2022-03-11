@@ -41,7 +41,9 @@ const ArticleCard: NextPage<ArticleCardProps> = ({ article }) => {
               </p>
             </div>
             <div className="mt-2">
-              <span>18 horas atrás &bull; Por Guilherme Sousa</span>
+              <span>
+                18 horas atrás &bull; Por {article.author.displayName}
+              </span>
             </div>
           </div>
         </article>

@@ -11,13 +11,13 @@ export function sanitizePost(post: Article): Article | boolean {
   const [metadata, markdown] = post.content.trim().split('-- START --')
 
   try {
-    const { cover, author } = JSON.parse(metadata)
+    const parsedMetadata = JSON.parse(metadata)
 
     const url = post.url
       .replace('http://dramaland-noticias.blogspot.com/', '')
       .replace('.html', '')
 
-    return { ...post, author, cover, markdown, url }
+    return { ...post, ...parsedMetadata, markdown, url }
   } catch (e) {
     return false
   }
