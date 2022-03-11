@@ -5,13 +5,11 @@ import { Article } from 'types'
 
 interface MainNewsCardProps {
   article: Article
-  center?: boolean
 }
 
-const MainNewsCard: NextPage<MainNewsCardProps> = ({ article, center }) => {
-  const styles = center
-    ? 'absolute bottom-0 h-full w-full cursor-pointer rounded-md bg-center bg-cover bg-blend-overlay transition-all group-hover:scale-105'
-    : 'absolute bottom-0 h-full w-full cursor-pointer rounded-md bg-cover bg-blend-overlay transition-all group-hover:scale-105'
+const MainNewsCard: NextPage<MainNewsCardProps> = ({ article }) => {
+  const styles =
+    'absolute bottom-0 h-full w-full cursor-pointer rounded-md bg-cover bg-center bg-blend-overlay transition-all group-hover:scale-105'
 
   return (
     <Link href={`/[...slug]?id=${article.url}`} as={article.url} passHref>

@@ -19,7 +19,7 @@ const MainNews: NextPage<MainNewsProps> = ({ articles }) => {
         if (index == 0)
           return (
             <div className={'row-span-2'} key={`article-main-${index}`}>
-              <MainNewsCard article={article} center />
+              <MainNewsCard article={article} />
             </div>
           )
         return <MainNewsCard key={`article-main-${index}`} article={article} />
