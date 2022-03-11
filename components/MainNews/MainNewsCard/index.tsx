@@ -1,11 +1,9 @@
 import type { NextPage } from 'next'
 
+import { Article } from 'types'
+
 interface MainNewsCardProps {
-  article: {
-    title: string
-    cover: string
-    category: string
-  }
+  article: Article
   center?: boolean
 }
 

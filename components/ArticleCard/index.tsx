@@ -1,19 +1,13 @@
 import type { NextPage } from 'next'
+import { Article } from 'types'
 
 interface ArticleCardProps {
-  article: {
-    title: string
-    cover: string
-    description: string
-    category: string
-  }
+  article: Article
 }
 
 const ArticleCard: NextPage<ArticleCardProps> = ({ article }) => {
   return (
-    <article
-      className={'group mt-4 flex max-h-52 cursor-pointer border-t px-2 pt-4'}
-    >
+    <article className={'mb-4 flex max-h-52 cursor-pointer border-b px-2 pb-4'}>
       <div className="h-42 w-72 overflow-hidden rounded-md">
         <img
           src={article.cover}
