@@ -19,7 +19,9 @@ MyApp.getInitialProps = async (appContext: any) => {
   ]
 
   async function fetchDramaInfo(id: string) {
-    const { data } = await api.get(`/id/${id}`)
+    const { data } = await api.get(`/id/${id}`, {
+      withCredentials: true,
+    })
     return data
   }
 
