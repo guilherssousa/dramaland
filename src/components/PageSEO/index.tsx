@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 
-const SEO: NextPage = () => {
+const PageSEO: NextPage = () => {
   return (
     <>
       <meta property="og:locale" content="pt_BR"></meta>
@@ -26,4 +26,4 @@ const SEO: NextPage = () => {
   )
 }
 
-export default SEO
+export default PageSEO

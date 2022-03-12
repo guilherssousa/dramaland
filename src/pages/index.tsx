@@ -4,6 +4,7 @@ import Head from 'next/head'
 
 import { Drama, Article } from 'types'
 
+import PageSEO from 'components/PageSEO'
 import Navbar from 'components/Navbar'
 import ArticleCard from 'components/ArticleCard'
 import MainNews from 'components/MainNews'
@@ -31,6 +32,7 @@ const Home: NextPage<HomeProps> = ({ topDramas, articles }) => {
     <>
       <Head>
         <title>Home | Dramaland </title>
+        <PageSEO />
       </Head>
 
       <Navbar />
