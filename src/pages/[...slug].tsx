@@ -5,6 +5,7 @@ import moment from 'moment'
 
 import { Article, Drama } from 'types'
 
+import SEO from 'components/SEO'
 import Navbar from 'components/Navbar'
 import Layout from 'components/Layout'
 
@@ -21,6 +22,7 @@ const Article: NextPage<ArticleProps> = ({ topDramas, article }) => {
     <>
       <Head>
         <title>{article.title} | Dramaland</title>
+        <SEO article={article} />
       </Head>
 
       <Navbar />

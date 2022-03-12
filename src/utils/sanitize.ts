@@ -17,7 +17,19 @@ export function sanitizePost(post: Article): Article | boolean {
       .replace('http://dramaland-noticias.blogspot.com/', '')
       .replace('.html', '')
 
-    return { ...post, ...parsedMetadata, markdown, url }
+    const cleanContent = markdown
+      .replace(/\[.*?\]\(.*?\)/g, '')
+      .replace(/\*\*|\*|\[|\]|\(|\)|\#|\+|\-|\>|\|/g, '')
+      .split(' ', 22)
+      .join(' ')
+
+    return {
+      ...post,
+      ...parsedMetadata,
+      markdown,
+      url,
+      description: cleanContent,
+    }
   } catch (e) {
     console.error(`Failed to trim: ${post.title}`)
     return false

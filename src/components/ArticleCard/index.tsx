@@ -37,9 +37,7 @@ const ArticleCard: NextPage<ArticleCardProps> = ({ article }) => {
               {article.title}
             </div>
             <div>
-              <p className="mt-2">
-                {article.markdown.split(' ').slice(0, 10).join(' ')}
-              </p>
+              <p className="mt-2">{article.description}...</p>
             </div>
             <div className="mt-2">
               <span>
