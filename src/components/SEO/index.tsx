@@ -9,24 +9,12 @@ const SEO: NextPage<SEOProps> = ({ article }) => {
   return (
     <>
       <meta property="og:image" content={article.cover}></meta>
-      <meta
-        name="description"
-        content={article.content
-          .replace(/<[^>]*>/g, '')
-          .split(' ', 22)
-          .join(' ')}
-      ></meta>
+      <meta name="description" content={article.description}></meta>
 
       <meta property="og:locale" content="pt_BR"></meta>
       <meta property="og:type" content="article"></meta>
       <meta property="og:title" content={`${article.title} | Dramaland`}></meta>
-      <meta
-        property="og:description"
-        content={article.content
-          .replace(/<[^>]*>/g, '')
-          .split(' ', 22)
-          .join(' ')}
-      ></meta>
+      <meta property="og:description" content={article.description}></meta>
       <meta property="og:site_name" content="Dramaland"></meta>
       <meta
         property="article:author"
