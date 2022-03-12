@@ -25,7 +25,10 @@ const SEO: NextPage<SEOProps> = ({ article }) => {
         content={article.published}
       ></meta>
       <meta property="og:image" content={article.cover}></meta>
-      <meta property="og:image:secure_url" content={article.cover}></meta>
+      <meta
+        property="og:image:secure_url"
+        content={`https://dramaland.vercel.app/${article.url}`}
+      ></meta>
       <meta property="og:image:type" content="image/jpeg"></meta>
       <meta name="twitter:card" content="summary_large_image"></meta>
       <meta
