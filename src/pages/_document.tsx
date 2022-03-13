@@ -28,6 +28,29 @@ class MyDocument extends Document {
             rel="stylesheet"
           ></link>
           <link rel="icon" type="image/png" href="/assets/favicon.png" />
+
+          <script src="/static/onesignal.js"></script>
+
+          <script
+            src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"
+            async
+          ></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.OneSignal = window.OneSignal || [];
+                OneSignal.push(function() {
+                  OneSignal.init({
+                    appId: "6939aa49-4fe9-4d18-9b8a-e820d788d90c",
+                    safari_web_id: "",
+                    notifyButton: {
+                      enable: true,
+                    },
+                  });
+                });
+              `,
+            }}
+          ></script>
         </Head>
         <body>
           <Main />
