@@ -12,7 +12,7 @@ const Navbar: NextPage = () => {
   }
 
   return (
-    <nav className={'sticky top-0 z-50 bg-blue-400 shadow-xl'}>
+    <nav className={'bg-text-blue-500 sticky top-0 z-50 shadow-xl'}>
       <div className={'mx-auto max-w-screen-lg px-4'}>
         <div className={'flex h-16 items-center justify-between'}>
           <div className={'flex items-center'}>
@@ -53,24 +53,22 @@ const Navbar: NextPage = () => {
             </div>
           </div>
           <div className={'flex items-center'}>
-            <Link href={'/busca'} passHref>
-              <a className="cursor-pointer">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
-              </a>
-            </Link>
+            <div className="cursor-pointer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-8 w-8 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </div>
             <div className="cursor-pointer" onClick={handleShare}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
