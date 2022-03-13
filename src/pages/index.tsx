@@ -20,13 +20,17 @@ interface HomeProps {
 }
 
 const Home: NextPage<HomeProps> = ({ topDramas, articles }) => {
-  const [isDesktop, setIsDesktop] = useState(0)
+  const [isDesktop, setIsDesktop] = useState(false)
 
   useEffect(() => {
     if (window.innerWidth >= 640) {
-      setIsDesktop(3)
+      setIsDesktop(true)
     }
   }, [])
+
+  const arraySliceBreakpoint = isDesktop ? 3 : 1
+
+  const slicedArticles = articles.slice(arraySliceBreakpoint)
 
   return (
     <>
@@ -38,18 +42,13 @@ const Home: NextPage<HomeProps> = ({ topDramas, articles }) => {
       <Navbar />
 
       <section className={'mx-auto my-4 max-w-screen-lg'}>
-        {articles.length >= 3 && <MainNews articles={articles} />}
+        <MainNews articles={articles} isMobile={!isDesktop} />
         <Layout topDramas={topDramas}>
           <div>
-            {articles.slice(isDesktop).length >= 3 - isDesktop ? (
-              articles
-                .slice(isDesktop)
-                .map((article, index) => (
-                  <ArticleCard
-                    key={`article-card-${index}`}
-                    article={article}
-                  />
-                ))
+            {slicedArticles ? (
+              slicedArticles.map((article, index) => (
+                <ArticleCard key={`article-card-${index}`} article={article} />
+              ))
             ) : (
               <div className="mt-2 w-full text-center text-gray-700">
                 <span>Não temos matérias para exibir :(</span>
