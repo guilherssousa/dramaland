@@ -15,7 +15,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="pt-BR">
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com"></link>
           <link
@@ -28,8 +28,6 @@ class MyDocument extends Document {
             rel="stylesheet"
           ></link>
           <link rel="icon" type="image/png" href="/assets/favicon.png" />
-
-          <script src="/static/onesignal.js" async></script>
 
           <script
             src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"
