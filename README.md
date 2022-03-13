@@ -43,6 +43,7 @@ Abaixo segue o que foi utilizado na criação do portal:
 - [Prettier](https://prettier.io/) - O Prettier atualiza seu código automaticamente seguindo os padrões que você quiser toda vez salva o arquivo;
 - [Blogger](https://www.blogger.com/) - O Blogger é um serviço do Google para criação de Blogs;
 - [kuryana](https://github.com/TheBoringDude/kuryana) - Uma API serverless de dados do MyDramaList.com;
+- [OneSignal](https://onesignal.com/) - O OneSignal é uma ferramenta para lidar com push notifications;
 
 <!-- CONTRIBUTING -->
 
