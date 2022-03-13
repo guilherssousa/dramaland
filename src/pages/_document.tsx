@@ -42,12 +42,6 @@ class MyDocument extends Document {
                 OneSignal.push(function() {
                   OneSignal.init({
                     appId: "6939aa49-4fe9-4d18-9b8a-e820d788d90c",
-                    safari_web_id: "",
-                    promptOptions: {
-                      actionMessage: "Quer ficar sempre atualizado? Clique em  \"Aceitar\" e receba as novidades.",
-                      acceptButton: "Aceitar",
-                      cancelButton: "Cancelar"
-                    }
                   });
                 });
               `,
