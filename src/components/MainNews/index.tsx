@@ -16,23 +16,25 @@ const MainNews: NextPage<MainNewsProps> = ({ articles, isMobile }) => {
         'mx-auto mt-8 mb-6 grid h-96 max-w-screen-lg grid-cols-2 grid-rows-2 gap-2 px-4'
       }
     >
-      {isMobile ? (
-        <div className={'col-span-2 row-span-2'} key={`article-main-1`}>
-          <MainNewsCard article={articles[0]} />
-        </div>
-      ) : (
-        articles.slice(0, 3).map((article, index) => {
-          if (index == 0)
+      {isMobile
+        ? articles.slice(0, 2).map((article, index) => {
             return (
-              <div className={'row-span-2'} key={`article-main-${index}`}>
+              <div className={'col-span-2'} key={`article-main-${index}`}>
                 <MainNewsCard article={article} />
               </div>
             )
-          return (
-            <MainNewsCard key={`article-main-${index}`} article={article} />
-          )
-        })
-      )}
+          })
+        : articles.slice(0, 3).map((article, index) => {
+            if (index == 0)
+              return (
+                <div className={'row-span-2'} key={`article-main-${index}`}>
+                  <MainNewsCard article={article} />
+                </div>
+              )
+            return (
+              <MainNewsCard key={`article-main-${index}`} article={article} />
+            )
+          })}
     </section>
   )
 }

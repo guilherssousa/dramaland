@@ -23,12 +23,22 @@ const Home: NextPage<HomeProps> = ({ topDramas, articles }) => {
   const [isDesktop, setIsDesktop] = useState(false)
 
   useEffect(() => {
-    if (window.innerWidth >= 640) {
-      setIsDesktop(true)
+    function onResize() {
+      setIsDesktop(window.innerWidth >= 640)
+    }
+
+    // run onResize once on mount for initial state
+    // TODO: achar aproach melhor para isso
+    onResize()
+
+    window.addEventListener('resize', onResize)
+
+    return () => {
+      window.removeEventListener('resize', onResize)
     }
   }, [])
 
-  const arraySliceBreakpoint = isDesktop ? 3 : 1
+  const arraySliceBreakpoint = isDesktop ? 3 : 2
 
   const slicedArticles = articles.slice(arraySliceBreakpoint)
 
