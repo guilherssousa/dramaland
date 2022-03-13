@@ -17,7 +17,7 @@ const ArticleCard: NextPage<ArticleCardProps> = ({ article }) => {
             'group mb-4 flex cursor-pointer border-b px-2 pb-4 sm:max-h-64'
           }
         >
-          <div className="h-28 w-32 overflow-hidden rounded-md sm:block md:h-40 md:w-72">
+          <div className="h-28 w-64 overflow-hidden rounded-md sm:block md:h-40 md:w-72">
             <img
               src={article.cover}
               className={
@@ -25,7 +25,7 @@ const ArticleCard: NextPage<ArticleCardProps> = ({ article }) => {
               }
             ></img>
           </div>
-          <div className="ml-4 w-7/12 text-gray-900">
+          <div className="ml-4 w-full text-gray-900 md:w-7/12">
             <div>
               <span
                 className={'text-sm font-bold text-blue-400 transition-all'}
@@ -36,7 +36,7 @@ const ArticleCard: NextPage<ArticleCardProps> = ({ article }) => {
             <div className={'font-bold group-hover:text-blue-400 sm:text-xl'}>
               {article.title}
             </div>
-            <div>
+            <div className="hidden sm:block">
               <p className="mt-2">{article.description}...</p>
             </div>
             <div className="mt-2">
