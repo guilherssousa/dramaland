@@ -39,11 +39,23 @@ const Article: NextPage<ArticleProps> = ({ topDramas, article }) => {
                 {article.title}
               </h2>
               <div className="mt-2 flex w-full items-center justify-between pr-2">
-                <span className="font-bold">
+                <span className="space-x-1 font-bold">
                   Por{' '}
                   <span className="uppercase text-blue-400">
                     {article.author.displayName}
                   </span>
+                  {article?.originalArticle && (
+                    <span>
+                      &bull;
+                      <a className="ml-1" href={article.originalArticle}>
+                        (
+                        <span className="text-sm uppercase text-blue-400 underline">
+                          Artigo original
+                        </span>
+                        )
+                      </a>
+                    </span>
+                  )}
                 </span>
                 <span>Publicado {moment(article.published).fromNow()}</span>
               </div>

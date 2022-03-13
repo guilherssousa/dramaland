@@ -17,6 +17,7 @@ export interface Article {
   title: string
   content: string
   description: string
+  originalArticle?: string
   author: {
     displayName: string
   }
