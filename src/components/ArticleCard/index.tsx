@@ -23,17 +23,18 @@ const ArticleCard: NextPage<ArticleCardProps> = ({ article }) => {
               className={
                 'aspect-video h-full w-full bg-center object-cover transition-all group-hover:scale-110'
               }
+              alt={article.title}
             ></img>
           </div>
           <div className="ml-4 w-full text-gray-900 md:w-7/12">
             <div>
               <span
-                className={'text-sm font-bold text-blue-400 transition-all'}
+                className={'text-sm font-bold text-blue-500 transition-all'}
               >
                 {article.labels?.[0].toUpperCase()}
               </span>
             </div>
-            <div className={'font-bold group-hover:text-blue-400 sm:text-xl'}>
+            <div className={'font-bold group-hover:text-blue-500 sm:text-xl'}>
               {article.title}
             </div>
             <div className="hidden sm:block">

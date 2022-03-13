@@ -18,7 +18,7 @@ const ArticleHeader: NextPage<ArticleHeaderProps> = ({ article }) => {
       <div className="mt-2 flex w-full items-center justify-between pr-2">
         <span className="space-x-1 font-bold">
           Por{' '}
-          <span className="uppercase text-blue-400">
+          <span className="uppercase text-blue-500">
             {article.author.displayName}
           </span>
           {article?.originalArticle && (
@@ -31,7 +31,7 @@ const ArticleHeader: NextPage<ArticleHeaderProps> = ({ article }) => {
                 rel="noreferrer"
               >
                 (
-                <span className="text-sm uppercase text-blue-400 underline">
+                <span className="text-sm uppercase text-blue-500 underline">
                   Artigo original
                 </span>
                 )

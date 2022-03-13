@@ -10,6 +10,11 @@ const PageSEO: NextPage = () => {
         property="og:description"
         content="Dramaland: Um portal de notícias, resenhas e opinião do mundo da dramaturgia coreana"
       ></meta>
+      <meta
+        name="description"
+        content="Dramaland: Um portal de notícias, resenhas e opinião do mundo da dramaturgia coreana"
+      ></meta>
+
       <meta property="og:site_name" content="Dramaland"></meta>
       <meta property="og:image" content={'/assets/favicon.png'}></meta>
       <meta

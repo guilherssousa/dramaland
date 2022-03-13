@@ -8,7 +8,7 @@ interface LayoutProps {
 const PopularDramas: NextPage<LayoutProps> = ({ topDramas }) => {
   return (
     <div className="border p-4">
-      <span className={'font-bold uppercase text-blue-400'}>
+      <span className={'font-bold uppercase text-blue-500'}>
         Dramas populares
       </span>
       <div className={'mt-2'}>
@@ -27,7 +27,7 @@ const PopularDramas: NextPage<LayoutProps> = ({ topDramas }) => {
             <div className={'ml-2 w-7/12'}>
               <span
                 className={
-                  'block text-sm font-bold text-blue-900 group-hover:text-blue-400'
+                  'block text-sm font-bold text-blue-900 group-hover:text-blue-500'
                 }
               >
                 {drama.data.title}
