@@ -50,7 +50,7 @@ class MyDocument extends Document {
                             type: "push",
                             autoPrompt: true,
                             text: {
-                              actionMessage: "Quer ficar atualizado sobre as produções? Clique em  \"Aceitar\" e receba notificações com novidades.",
+                              actionMessage: "Quer ficar sempre atualizado? Clique em  \"Aceitar\" e receba as novidades.",
                               acceptButton: "Aceitar",
                               cancelButton: "Cancelar"
                             },
