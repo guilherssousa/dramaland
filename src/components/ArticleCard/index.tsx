@@ -14,7 +14,7 @@ const ArticleCard: NextPage<ArticleCardProps> = ({ article }) => {
       <a>
         <article
           className={
-            'group mb-4 flex cursor-pointer border-b px-2 pb-4 sm:max-h-52'
+            'group mb-4 flex cursor-pointer border-b px-2 pb-4 sm:max-h-64'
           }
         >
           <div className="h-28 w-32 overflow-hidden rounded-md sm:block md:h-40 md:w-72">
