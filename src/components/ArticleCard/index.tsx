@@ -20,6 +20,8 @@ const ArticleCard: NextPage<ArticleCardProps> = ({ article }) => {
           <div className="h-28 w-64 overflow-hidden rounded-md sm:block md:h-40 md:w-72">
             <img
               src={article.cover}
+              width={256}
+              height={112}
               className={
                 'aspect-video h-full w-full bg-center object-cover transition-all group-hover:scale-110'
               }

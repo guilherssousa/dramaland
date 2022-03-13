@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Image from 'next/Image'
 import Link from 'next/link'
 
 import share from 'utils/share'
@@ -18,9 +19,11 @@ const Navbar: NextPage = () => {
           <div className={'flex items-center'}>
             <Link href={'/'} passHref>
               <a>
-                <img
+                <Image
                   src="/assets/dramaland-white.png"
                   className={'h-10'}
+                  height={40}
+                  width={160}
                   alt="Dramaland"
                 />
               </a>
