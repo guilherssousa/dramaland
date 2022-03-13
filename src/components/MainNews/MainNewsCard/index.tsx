@@ -22,6 +22,9 @@ const MainNewsCard: NextPage<MainNewsCardProps> = ({ article }) => {
           <div className={'h-full w-full'}>
             <div
               className={'relative z-10 flex h-full flex-col justify-end p-4'}
+              style={{
+                backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.333) 30%, rgba(255, 255, 255, 0.25) 100%)`,
+              }}
             >
               <span className="w-fit rounded-sm bg-blue-400 px-2 font-bold text-white">
                 {article.labels?.[0].toUpperCase()}
@@ -34,7 +37,7 @@ const MainNewsCard: NextPage<MainNewsCardProps> = ({ article }) => {
           <div
             className={styles}
             style={{
-              backgroundImage: `url(${article.cover}), linear-gradient(0deg, rgba(0, 0, 0, 0.533) 30%, rgba(255, 255, 255, 0.25) 100%)`,
+              backgroundImage: `url(${article.cover})`,
             }}
           ></div>
         </div>

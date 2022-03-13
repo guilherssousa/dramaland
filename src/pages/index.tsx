@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
@@ -13,22 +13,19 @@ import Layout from 'components/Layout'
 import blogger from 'services/blogger'
 
 import { sanitizePosts } from 'utils/sanitize'
-
 interface HomeProps {
   topDramas: Drama[]
   articles: Article[]
 }
 
 const Home: NextPage<HomeProps> = ({ topDramas, articles }) => {
-  const [isDesktop, setIsDesktop] = useState(false)
+  const [isDesktop, setIsDesktop] = useState(true)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     function onResize() {
       setIsDesktop(window.innerWidth >= 640)
     }
 
-    // run onResize once on mount for initial state
-    // TODO: achar aproach melhor para isso
     onResize()
 
     window.addEventListener('resize', onResize)
