@@ -40,29 +40,15 @@ class MyDocument extends Document {
               __html: `
                 window.OneSignal = window.OneSignal || [];
                 OneSignal.push(function() {
-                  OneSignal.init({
-                    appId: "6939aa49-4fe9-4d18-9b8a-e820d788d90c",
-                    safari_web_id: "",
-                    promptOptions: {
-                      slidedown: {
-                        prompts: [
-                          {
-                            type: "push",
-                            autoPrompt: true,
-                            text: {
-                              actionMessage: "Quer ficar sempre atualizado? Clique em  \"Aceitar\" e receba as novidades.",
-                              acceptButton: "Aceitar",
-                              cancelButton: "Cancelar"
-                            },
-                            delay: {
-                              pageViews: 1,
-                              timeDelay: 5
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  });
+                    OneSignal.init({
+                        appId: "6939aa49-4fe9-4d18-9b8a-e820d788d90c",
+                        safari_web_id: "",
+                        promptOptions: {
+                            actionMessage: "Quer ficar sempre atualizado? Clique em  \"Aceitar\" e receba as novidades.",
+                            acceptButton: "Aceitar",
+                            cancelButton: "Cancelar"
+                        }
+                    });
                 });
               `,
             }}
