@@ -12,7 +12,7 @@ const Navbar: NextPage = () => {
   }
 
   return (
-    <nav className={'bg-text-blue-500 sticky top-0 z-50 shadow-xl'}>
+    <nav className={'sticky top-0 z-50 bg-blue-500 shadow-xl'}>
       <div className={'mx-auto max-w-screen-lg px-4'}>
         <div className={'flex h-16 items-center justify-between'}>
           <div className={'flex items-center'}>

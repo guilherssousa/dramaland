@@ -26,7 +26,7 @@ const MainNewsCard: NextPage<MainNewsCardProps> = ({ article }) => {
                 backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.333) 30%, rgba(255, 255, 255, 0.25) 100%)`,
               }}
             >
-              <span className="bg-text-blue-500 w-fit rounded-sm px-2 font-bold text-white">
+              <span className="w-fit rounded-sm bg-blue-500 px-2 font-bold text-white">
                 {article.labels?.[0].toUpperCase()}
               </span>
               <h1 className={'text-2xl font-bold text-white'}>
