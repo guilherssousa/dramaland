@@ -21,6 +21,7 @@ const PopularDramas: NextPage<LayoutProps> = ({ topDramas }) => {
               <img
                 src={drama.data.poster}
                 className={'w-20 object-cover'}
+                alt={drama.data.title}
               ></img>
             </div>
             <div className={'ml-2 w-7/12'}>

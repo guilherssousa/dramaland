@@ -29,6 +29,8 @@ class MyDocument extends Document {
           ></link>
           <link rel="icon" type="image/png" href="/assets/favicon.png" />
 
+          <script src="/static/onesignal.js" async></script>
+
           <script
             src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"
             async
