@@ -43,9 +43,25 @@ class MyDocument extends Document {
                   OneSignal.init({
                     appId: "6939aa49-4fe9-4d18-9b8a-e820d788d90c",
                     safari_web_id: "",
-                    notifyButton: {
-                      enable: true,
-                    },
+                    promptOptions: {
+                      slidedown: {
+                        prompts: [
+                          {
+                            type: "push",
+                            autoPrompt: true,
+                            text: {
+                              actionMessage: "Quer ficar atualizado sobre as produções? Clique em  \"Aceitar\" e receba notificações com novidades.",
+                              acceptButton: "Aceitar",
+                              cancelButton: "Cancelar"
+                            },
+                            delay: {
+                              pageViews: 1,
+                              timeDelay: 5
+                            }
+                          }
+                        ]
+                      }
+                    }
                   });
                 });
               `,
