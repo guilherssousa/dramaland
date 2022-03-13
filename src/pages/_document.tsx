@@ -29,7 +29,7 @@ class MyDocument extends Document {
           ></link>
           <link rel="icon" type="image/png" href="/assets/favicon.png" />
 
-          <script src="/static/onesignal.js"></script>
+          <script src="/static/onesignal.js" async></script>
 
           <script
             src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"
@@ -40,15 +40,15 @@ class MyDocument extends Document {
               __html: `
                 window.OneSignal = window.OneSignal || [];
                 OneSignal.push(function() {
-                    OneSignal.init({
-                        appId: "6939aa49-4fe9-4d18-9b8a-e820d788d90c",
-                        safari_web_id: "",
-                        promptOptions: {
-                            actionMessage: "Quer ficar sempre atualizado? Clique em  \"Aceitar\" e receba as novidades.",
-                            acceptButton: "Aceitar",
-                            cancelButton: "Cancelar"
-                        }
-                    });
+                  OneSignal.init({
+                    appId: "6939aa49-4fe9-4d18-9b8a-e820d788d90c",
+                    safari_web_id: "",
+                    promptOptions: {
+                      actionMessage: "Quer ficar sempre atualizado? Clique em  \"Aceitar\" e receba as novidades.",
+                      acceptButton: "Aceitar",
+                      cancelButton: "Cancelar"
+                    }
+                  });
                 });
               `,
             }}
